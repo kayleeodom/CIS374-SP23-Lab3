@@ -38,7 +38,63 @@ namespace Lab3
             //Console.WriteLine($"{averageTime}");
 
             // Selection sort
-            
+            SelectionSort<int> selectionSort = new SelectionSort<int>();
+            Console.WriteLine("SELECTION SORT");
+            totalTime = 0;
+
+            for (int i = 0; i < 11; i++)
+            {
+                List<int> intListCopy = new List<int>(intList);   // make a copy of the original unsorted array
+
+                totalTime += TimeSort<int>(selectionSort, intListCopy);
+            }
+
+            averageTime = totalTime / 11;
+            Console.WriteLine($"{averageTime}");
+
+            //Insertion Sort
+            InsertionSort<int> insertionSort = new InsertionSort<int>();
+            Console.WriteLine("INSERTION SORT");
+            totalTime = 0;
+
+            for (int i = 0; i < 11; i++)
+            {
+                List<int> intListCopy = new List<int>(intList);   // make a copy of the original unsorted array
+
+                totalTime += TimeSort<int>(insertionSort, intListCopy);
+            }
+
+            averageTime = totalTime / 11;
+            Console.WriteLine($"{averageTime}");
+
+            //Heap Sort
+            HeapSort<int> heapSort = new HeapSort<int>();
+            Console.WriteLine("HEAP SORT");
+            totalTime = 0;
+
+            for (int i = 0; i < 11; i++)
+            {
+                List<int> intListCopy = new List<int>(intList);   // make a copy of the original unsorted array
+
+                totalTime += TimeSort<int>(heapSort, intListCopy);
+            }
+
+            averageTime = totalTime / 11;
+            Console.WriteLine($"{averageTime}");
+
+            // Quick Sort
+            QuickSort<int> quickSort = new QuickSort<int>();
+            Console.WriteLine("QUICK SORT");
+            for (int i = 0; i < 11; i++)
+            {
+                List<int> intListCopy = new List<int>(intList);   // make a copy of the original unsorted array
+
+                totalTime += TimeSort<int>(quickSort, intListCopy);
+            }
+
+            averageTime = totalTime / 11;
+            Console.WriteLine($"{averageTime}");
+
             // Bucket Sort
             BucketSort bucketSort = new BucketSort();
             Console.WriteLine("BUCKET SORT");
